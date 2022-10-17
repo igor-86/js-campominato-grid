@@ -33,3 +33,25 @@
     font-weight: 700;
     cursor: pointer;
 }
+
+.container-wrap {
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row-wrap {
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.box-wrap {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+}
