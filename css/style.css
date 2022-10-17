@@ -49,9 +49,22 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    visibility: hidden;
 }
-.box-wrap {
+.box-wrapper {
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.box-color {
+    background-color: blue;
+}
+
+.active {
+    visibility: visible;
 }
