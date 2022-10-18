@@ -10,9 +10,10 @@ const startGame = openTheGame();
 
 
 
+
 for (let i = 0; i < randomNumbers.length; i++){
     const generateNumbers = randomNumbers[i];
-    console.log(generateNumbers);
+    
     //Stampo box
     const newBox = boxWrapper(generateNumbers);
 
@@ -31,15 +32,17 @@ function generateRandomNumbers (numberlengh) {
         const rndNumber = Math.floor(Math.random() * (100 - 1 + 1) ) + 1;
         // Se il numero non è incluso nell'array
         //  Pusho
-       
+        
         if (!numbersRandom.includes(rndNumber)) {
             numbersRandom.push(rndNumber);
         }
-        numbersRandom.sort();
+        
+        numbersRandom.sort(function(a, b){return a - b});
+        
         
     }
-    console.log(numbersRandom);
-    return numbersRandom.sort(); 
+    
+    return numbersRandom; 
 }
 
 // funzione che stampa i box
@@ -55,7 +58,10 @@ function boxWrapper (insertNumber){
  function openTheGame(eventGame){
     const buttonStart = document.getElementById("btn");
     buttonStart.addEventListener("click", function(){
-    wrapper.classList.toggle("active");
+    
+     wrapper.classList.toggle("active");
+   
+    
 
     return buttonStart;
     })
@@ -64,7 +70,12 @@ function boxWrapper (insertNumber){
 
 // function per colorare i singoli box
 function colorBox(colors){
+    const checkNumber = parseInt(this.textContent);
+    console.log(checkNumber);
     this.classList.add("box-color");
 }
+
+
+
 
 
